@@ -23,18 +23,6 @@
   };
   $$("[data-icon]").forEach(el => { const k = el.getAttribute("data-icon"); if (ICONS[k]) el.innerHTML = ICONS[k]; });
 
-  /* ---------- collection card artwork (inline SVG → CSS background) ---------- */
-  const ART = {
-    watch: `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><radialGradient id='g' cx='50%' cy='42%' r='65%'><stop offset='0%' stop-color='%23262017'/><stop offset='100%' stop-color='%230b0b0d'/></radialGradient></defs><rect width='400' height='300' fill='url(%23g)'/><circle cx='200' cy='150' r='86' fill='%23121214' stroke='%23c9a24b' stroke-width='3'/><circle cx='200' cy='150' r='72' fill='none' stroke='%23433a26' stroke-width='1'/><g stroke='%23e8c87a' stroke-width='3' stroke-linecap='round'><line x1='200' y1='150' x2='200' y2='100'/><line x1='200' y1='150' x2='236' y2='168'/></g><circle cx='200' cy='150' r='5' fill='%23e8c87a'/><g stroke='%23c9a24b' stroke-width='2'><line x1='200' y1='78' x2='200' y2='90'/><line x1='272' y1='150' x2='260' y2='150'/><line x1='200' y1='222' x2='200' y2='210'/><line x1='128' y1='150' x2='140' y2='150'/></g><rect x='186' y='52' width='28' height='16' rx='3' fill='%231a1a1e' stroke='%23c9a24b'/><rect x='186' y='232' width='28' height='16' rx='3' fill='%231a1a1e' stroke='%23c9a24b'/></svg>`,
-    car: `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='cg' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%23241d14'/><stop offset='100%' stop-color='%230b0b0d'/></linearGradient></defs><rect width='400' height='300' fill='url(%23cg)'/><path d='M40 196c0-8 8-14 22-18l46-40c10-9 24-14 40-14h70c20 0 38 8 54 22l40 30c16 3 28 9 28 20v14H40z' fill='%23141416' stroke='%23c9a24b' stroke-width='2.5'/><path d='M132 130c8-8 18-12 30-12h54c14 0 26 6 36 16l16 16H120z' fill='%231f1a12' stroke='%23433a26'/><circle cx='118' cy='196' r='30' fill='%230d0d0f' stroke='%23c9a24b' stroke-width='3'/><circle cx='118' cy='196' r='12' fill='%231a1a1e' stroke='%23e8c87a'/><circle cx='292' cy='196' r='30' fill='%230d0d0f' stroke='%23c9a24b' stroke-width='3'/><circle cx='292' cy='196' r='12' fill='%231a1a1e' stroke='%23e8c87a'/><ellipse cx='60' cy='150' rx='12' ry='6' fill='%23e8c87a' opacity='.7'/></svg>`,
-    bag: `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%23231d15'/><stop offset='100%' stop-color='%230b0b0d'/></linearGradient></defs><rect width='400' height='300' fill='url(%23bg)'/><path d='M150 110c0-22 14-38 50-38s50 16 50 38' fill='none' stroke='%23c9a24b' stroke-width='4'/><path d='M120 116h160l14 120H106z' fill='%23161616' stroke='%23c9a24b' stroke-width='2.5'/><path d='M120 116h160l3 26H117z' fill='%231f1a12'/><rect x='185' y='150' width='30' height='40' rx='5' fill='%231a1a1e' stroke='%23e8c87a' stroke-width='2'/><line x1='200' y1='150' x2='200' y2='190' stroke='%23e8c87a'/><circle cx='200' cy='168' r='4' fill='%23e8c87a'/></svg>`,
-    art: `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%230b0b0d'/><rect x='96' y='52' width='208' height='196' rx='4' fill='%23161616' stroke='%23c9a24b' stroke-width='8'/><rect x='112' y='68' width='176' height='164' fill='%231b1812'/><circle cx='168' cy='120' r='26' fill='%23c9a24b' opacity='.85'/><path d='M112 232l52-70 34 34 30-40 60 76z' fill='%23433a26'/><path d='M112 232l52-70 34 34 30-40 60 76z' fill='none' stroke='%23e8c87a' stroke-width='1.5' opacity='.5'/></svg>`
-  };
-  $$("[data-art]").forEach(el => {
-    const k = el.getAttribute("data-art");
-    if (ART[k]) el.style.backgroundImage = `url("data:image/svg+xml,${ART[k]}")`;
-  });
-
   /* ---------- sticky nav ---------- */
   const nav = $("#nav");
   const onScroll = () => {
@@ -59,10 +47,21 @@
   $$("#mobileMenu a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 
   /* ---------- scroll reveal ---------- */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
-  }, { threshold: 0.14 });
-  $$(".reveal").forEach(el => io.observe(el));
+  const reveals = $$(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+    reveals.forEach(el => io.observe(el));
+    // Failsafe: reveal anything already in/above the viewport once loaded.
+    const sweep = () => reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-in");
+    });
+    window.addEventListener("load", sweep);
+    setTimeout(sweep, 700);
+  } else {
+    reveals.forEach(el => el.classList.add("is-in"));
+  }
 
   /* ---------- animated counters ---------- */
   const fmt = (n) => n >= 1000 ? n.toLocaleString("en-US") : String(n);
@@ -132,10 +131,17 @@
     chartLine.style.strokeDashoffset = "0";
   }
   let chartDrawn = false;
-  const chartIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting && !chartDrawn) { drawChart("1M"); chartDrawn = true; } });
-  }, { threshold: 0.3 });
-  if ($("#chart")) chartIO.observe($("#chart"));
+  const ensureChart = () => { if (!chartDrawn) { drawChart("1M"); chartDrawn = true; } };
+  if ($("#chart")) {
+    if ("IntersectionObserver" in window) {
+      const chartIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) ensureChart(); });
+      }, { threshold: 0.25 });
+      chartIO.observe($("#chart"));
+    }
+    // Failsafe: guarantee the chart is drawn even if the observer never fires.
+    window.addEventListener("load", () => setTimeout(ensureChart, 900));
+  }
   $$(".market__range button").forEach(b => b.addEventListener("click", () => {
     $$(".market__range button").forEach(x => x.classList.remove("is-active"));
     b.classList.add("is-active");

@@ -47,7 +47,11 @@ demo modal instead of hitting a server.
 - [x] Interactions: sticky nav, scroll-reveal, animated counters, demo modals,
       back-to-top, live-feel market chart
 - [x] Responsive across desktop / tablet (iPad) / mobile (phone) breakpoints
-- [x] Resolution-independent SVG artwork & icons (crisp on every device & DPI)
+- [x] Photographic hero & category imagery matching the design screenshots
+      (luxury watch, classic/exotic car, quilted handbag), with the brand logo
+      and UI icons authored as crisp SVG
+- [x] Every photo bundled at three resolutions (480 / 960 / 1600px) and served
+      responsively via `srcset`/`sizes` for mobile, tablet, and desktop/Retina
 
 ### Responsive breakpoints
 | Device | Width | Layout |
@@ -86,6 +90,8 @@ demo modal instead of hitting a server.
 - **Stack:** Vanilla HTML + CSS + JavaScript. No framework, no build step, no backend.
 - **Run locally:** open `index.html` directly, or serve the folder
   (`python3 -m http.server 8000`) and visit `http://localhost:8000`.
-- **Images:** Artwork is authored as SVG, which is resolution-independent — a single
-  asset renders crisply on phones, tablets, desktops, and high-DPI/Retina displays,
-  satisfying the multi-resolution requirement in `CLAUDE.md` without separate raster sizes.
+- **Images:** Photography is royalty-free stock from [Unsplash](https://unsplash.com)
+  (see `assets/img/CREDITS.md`), bundled locally at three widths (480 / 960 / 1600px)
+  and delivered with `<img srcset sizes>` so each device downloads an appropriately
+  sized file — satisfying the multi-resolution requirement in `CLAUDE.md`. The brand
+  logo, favicon, and UI icons are SVG (resolution-independent vector).

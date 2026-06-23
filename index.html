@@ -14,6 +14,8 @@
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Progressive enhancement: only hide content for scroll-reveal when JS is active -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -70,24 +72,33 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
       <div class="hero__bg" aria-hidden="true">
-        <img src="assets/hero-watch.svg" alt="" class="hero__art hero__art--watch" />
-        <img src="assets/hero-car.svg" alt="" class="hero__art hero__art--car" />
-        <div class="hero__glow"></div>
+        <img class="hero__bgimg"
+             src="assets/img/hero-bg-1600.jpg"
+             srcset="assets/img/hero-bg-960.jpg 960w, assets/img/hero-bg-1600.jpg 1600w, assets/img/hero-bg-2200.jpg 2200w"
+             sizes="100vw" alt="" fetchpriority="high" />
+        <img class="hero__photo hero__photo--watch"
+             src="assets/img/hero-watch-960.jpg"
+             srcset="assets/img/hero-watch-480.jpg 480w, assets/img/hero-watch-960.jpg 960w"
+             sizes="(max-width:1023px) 40vw, 380px" alt="" />
+        <img class="hero__photo hero__photo--car"
+             src="assets/img/hero-car-1600.jpg"
+             srcset="assets/img/hero-car-960.jpg 960w, assets/img/hero-car-1600.jpg 1600w"
+             sizes="(max-width:1023px) 60vw, 640px" alt="" />
+        <div class="hero__veil"></div>
       </div>
 
       <div class="container hero__inner">
-        <p class="eyebrow reveal">The Global Community Of</p>
-        <h1 class="hero__title reveal">Luxury <span>Collectors</span></h1>
+        <p class="hero__eyebrow reveal"><span>The Global Community For</span></p>
+        <h1 class="hero__title reveal">Luxury Collectors</h1>
         <p class="hero__lead reveal">
-          Connecting passionate collectors of luxury watches, classic cars and
-          exceptional assets with trusted experts, market intelligence, and an
-          invitation-only world of curated events.
+          Connecting passionate collectors, trusted dealers and industry experts
+          across high-end watches, classic cars and exceptional assets.
         </p>
         <div class="hero__cta reveal">
           <button class="btn btn--gold js-modal" data-modal="join">Become a Member</button>
           <button class="btn btn--outline js-modal" data-modal="video">
             <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-            Watch the Film
+            Watch Video
           </button>
         </div>
       </div>
@@ -99,7 +110,7 @@
           <li><span class="stats__num" data-count="40" data-suffix="+">0</span><span class="stats__label">Countries</span></li>
           <li><span class="stats__num" data-count="250" data-suffix="+">0</span><span class="stats__label">Trusted Dealers</span></li>
           <li><span class="stats__num" data-count="50" data-suffix="+">0</span><span class="stats__label">Exclusive Events</span></li>
-          <li class="stats__live"><span class="stats__num">24/7</span><span class="stats__label">Market Insights</span></li>
+          <li class="stats__live"><span class="stats__num">Live</span><span class="stats__label">Market Insights &middot; Real-Time Data</span></li>
         </ul>
       </div>
     </section>
@@ -110,47 +121,53 @@
         <header class="section__head reveal">
           <p class="eyebrow">Curated Categories</p>
           <h2 class="section__title">Explore Our Collections</h2>
-          <p class="section__sub">Four worlds of provenance, craftsmanship, and quiet excellence — each authenticated by our network of trusted specialists.</p>
+          <p class="section__sub">Worlds of provenance, craftsmanship, and quiet excellence — each authenticated by our network of trusted specialists.</p>
         </header>
 
         <div class="cards">
           <article class="card reveal" id="watches">
-            <div class="card__media" data-art="watch"></div>
-            <div class="card__body">
-              <p class="card__kicker">Horology</p>
+            <div class="card__media">
+              <img class="card__img"
+                   src="assets/img/card-watch-960.jpg"
+                   srcset="assets/img/card-watch-480.jpg 480w, assets/img/card-watch-960.jpg 960w, assets/img/card-watch-1600.jpg 1600w"
+                   sizes="(max-width:639px) 100vw, (max-width:1023px) 50vw, 33vw"
+                   alt="A luxury chronograph wristwatch on a black background" loading="lazy" width="960" height="720" />
               <h3 class="card__title">High-End Watches</h3>
-              <p class="card__text">Rolex, Patek Philippe, Audemars Piguet and independents — verified, valued, and traded with confidence.</p>
-              <a class="link js-modal" data-modal="join" href="#">Explore watches <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="card__body">
+              <p class="card__text">Discover, buy and sell the world&rsquo;s most prestigious timepieces.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore Watches <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
 
           <article class="card reveal" id="cars">
-            <div class="card__media" data-art="car"></div>
+            <div class="card__media">
+              <img class="card__img"
+                   src="assets/img/card-car-960.jpg"
+                   srcset="assets/img/card-car-480.jpg 480w, assets/img/card-car-960.jpg 960w, assets/img/card-car-1600.jpg 1600w"
+                   sizes="(max-width:639px) 100vw, (max-width:1023px) 50vw, 33vw"
+                   alt="A classic exotic sports car" loading="lazy" width="960" height="720" />
+              <h3 class="card__title">Classic &amp; Exotic Cars</h3>
+            </div>
             <div class="card__body">
-              <p class="card__kicker">Automobiles</p>
-              <h3 class="card__title">Classic Cars</h3>
-              <p class="card__text">From pre-war coachwork to modern hypercars, discover concours-grade machines and their stories.</p>
-              <a class="link js-modal" data-modal="join" href="#">Explore cars <span aria-hidden="true">&rarr;</span></a>
+              <p class="card__text">Find iconic cars, connect with specialists and explore investments.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore Cars <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
 
           <article class="card reveal" id="handbags">
-            <div class="card__media" data-art="bag"></div>
-            <div class="card__body">
-              <p class="card__kicker">Maison</p>
+            <div class="card__media">
+              <img class="card__img"
+                   src="assets/img/card-bag-960.jpg"
+                   srcset="assets/img/card-bag-480.jpg 480w, assets/img/card-bag-960.jpg 960w, assets/img/card-bag-1600.jpg 1600w"
+                   sizes="(max-width:639px) 100vw, (max-width:1023px) 50vw, 33vw"
+                   alt="A quilted black luxury handbag" loading="lazy" width="960" height="720" />
+              <span class="card__badge">Coming Soon</span>
               <h3 class="card__title">Luxury Handbags</h3>
-              <p class="card__text">Hermès Birkin, Kelly and rare exotics — collected, preserved, and appraised as fine assets.</p>
-              <a class="link js-modal" data-modal="join" href="#">Explore handbags <span aria-hidden="true">&rarr;</span></a>
             </div>
-          </article>
-
-          <article class="card reveal" id="art">
-            <div class="card__media" data-art="art"></div>
             <div class="card__body">
-              <p class="card__kicker">Fine Art</p>
-              <h3 class="card__title">Fine Art</h3>
-              <p class="card__text">Modern masters and emerging names, with provenance research and private-sale access.</p>
-              <a class="link js-modal" data-modal="join" href="#">Explore art <span aria-hidden="true">&rarr;</span></a>
+              <p class="card__text">Curated selection of the world&rsquo;s most sought-after luxury handbags.</p>
+              <a class="link js-modal" data-modal="join" href="#">Learn More <span aria-hidden="true">&rarr;</span></a>
             </div>
           </article>
         </div>
@@ -169,27 +186,27 @@
           <div class="benefit reveal">
             <div class="benefit__icon" data-icon="shield"></div>
             <h3>Trust &amp; Authenticity</h3>
-            <p>Every member, dealer, and asset is vetted. Provenance and condition are independently verified.</p>
+            <p>All members and listings verified for your peace of mind.</p>
           </div>
           <div class="benefit reveal">
             <div class="benefit__icon" data-icon="chart"></div>
             <h3>Market Intelligence</h3>
-            <p>Real-time indices, auction analytics, and valuations so you collect with conviction.</p>
+            <p>Real-time data, price trends and expert insights.</p>
           </div>
           <div class="benefit reveal">
             <div class="benefit__icon" data-icon="crown"></div>
             <h3>Exclusive Community</h3>
-            <p>An invitation-only circle of serious collectors, curators, and specialists worldwide.</p>
+            <p>Connect with collectors, experts and industry leaders.</p>
           </div>
           <div class="benefit reveal">
             <div class="benefit__icon" data-icon="ticket"></div>
             <h3>Premium Events</h3>
-            <p>Private viewings, concours previews, and members-only auctions across the globe.</p>
+            <p>Invitations to private events, auctions and experiences.</p>
           </div>
           <div class="benefit reveal">
             <div class="benefit__icon" data-icon="bell"></div>
-            <h3>Concierge Service</h3>
-            <p>Sourcing, logistics, and white-glove acquisition handled by a dedicated advisor.</p>
+            <h3>Concierge Services</h3>
+            <p>Personalised support for your collecting journey.</p>
           </div>
         </div>
       </div>
