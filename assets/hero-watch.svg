@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360">
+  <defs>
+    <radialGradient id="face" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#2a2418"/>
+      <stop offset="70%" stop-color="#15130d"/>
+      <stop offset="100%" stop-color="#0b0b0d"/>
+    </radialGradient>
+    <linearGradient id="bezel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8c87a"/>
+      <stop offset="50%" stop-color="#c9a24b"/>
+      <stop offset="100%" stop-color="#7c601f"/>
+    </linearGradient>
+    <linearGradient id="strap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#23201a"/>
+      <stop offset="100%" stop-color="#0e0d0a"/>
+    </linearGradient>
+  </defs>
+  <!-- straps -->
+  <path d="M120 40 h60 l-6 86 h-48 z" fill="url(#strap)" stroke="#c9a24b" stroke-width="1.2" opacity=".9"/>
+  <path d="M120 320 h60 l-6 -86 h-48 z" fill="url(#strap)" stroke="#c9a24b" stroke-width="1.2" opacity=".9"/>
+  <!-- case -->
+  <circle cx="150" cy="180" r="96" fill="url(#bezel)"/>
+  <circle cx="150" cy="180" r="84" fill="url(#face)" stroke="#3a3221" stroke-width="2"/>
+  <!-- crown stem -->
+  <rect x="244" y="172" width="14" height="16" rx="3" fill="url(#bezel)"/>
+  <!-- hour markers -->
+  <g stroke="#c9a24b" stroke-width="3" stroke-linecap="round">
+    <line x1="150" y1="108" x2="150" y2="122"/>
+    <line x1="222" y1="180" x2="208" y2="180"/>
+    <line x1="150" y1="252" x2="150" y2="238"/>
+    <line x1="78" y1="180" x2="92" y2="180"/>
+  </g>
+  <g stroke="#7c601f" stroke-width="2" stroke-linecap="round" opacity=".8">
+    <line x1="186" y1="118" x2="180" y2="130"/>
+    <line x1="212" y1="144" x2="200" y2="150"/>
+    <line x1="212" y1="216" x2="200" y2="210"/>
+    <line x1="186" y1="242" x2="180" y2="230"/>
+    <line x1="114" y1="242" x2="120" y2="230"/>
+    <line x1="88" y1="216" x2="100" y2="210"/>
+    <line x1="88" y1="144" x2="100" y2="150"/>
+    <line x1="114" y1="118" x2="120" y2="130"/>
+  </g>
+  <!-- subdial -->
+  <circle cx="150" cy="215" r="22" fill="none" stroke="#433a26" stroke-width="1.5"/>
+  <!-- hands -->
+  <line x1="150" y1="180" x2="150" y2="124" stroke="#e8c87a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="150" y1="180" x2="196" y2="200" stroke="#e8c87a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="150" y1="180" x2="128" y2="148" stroke="#c9a24b" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="150" cy="180" r="6" fill="#e8c87a"/>
+  <!-- glass glare -->
+  <path d="M104 132 q40 -20 86 6 q-50 -6 -86 28 z" fill="#ffffff" opacity=".06"/>
+</svg>

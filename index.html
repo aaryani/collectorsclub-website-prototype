@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <title>Crown &amp; Chrone — The Global Community of Luxury Collectors</title>
+  <meta name="description" content="Crown & Chrone is a private members' club for collectors of luxury watches, classic cars, fine handbags, and exceptional assets. Connect with trusted dealers, market intelligence, and curated events." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="#top" aria-label="Crown and Chrone home">
+        <img src="assets/logo.svg" alt="" class="brand__mark" width="34" height="34" />
+        <span class="brand__text">
+          <span class="brand__name">CROWN &amp; CHRONE</span>
+          <span class="brand__tag">COLLECTORS&rsquo; CLUB</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#collections">Collections</a>
+        <a href="#watches" data-cat="watches">Watches</a>
+        <a href="#cars" data-cat="cars">Classic Cars</a>
+        <a href="#market">Market Insights</a>
+        <a href="#benefits">Membership</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="btn btn--ghost btn--sm js-modal" data-modal="signin">Sign In</button>
+        <button class="btn btn--gold btn--sm js-modal" data-modal="join">Join</button>
+        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile slide-in menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#collections">Collections</a>
+      <a href="#watches">Watches</a>
+      <a href="#cars">Classic Cars</a>
+      <a href="#market">Market Insights</a>
+      <a href="#benefits">Membership</a>
+      <a href="#about">About</a>
+      <button class="btn btn--gold js-modal" data-modal="join">Become a Member</button>
+      <button class="btn btn--ghost js-modal" data-modal="signin">Sign In</button>
+    </nav>
+  </div>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <span id="top"></span>
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/hero-watch.svg" alt="" class="hero__art hero__art--watch" />
+        <img src="assets/hero-car.svg" alt="" class="hero__art hero__art--car" />
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">The Global Community Of</p>
+        <h1 class="hero__title reveal">Luxury <span>Collectors</span></h1>
+        <p class="hero__lead reveal">
+          Connecting passionate collectors of luxury watches, classic cars and
+          exceptional assets with trusted experts, market intelligence, and an
+          invitation-only world of curated events.
+        </p>
+        <div class="hero__cta reveal">
+          <button class="btn btn--gold js-modal" data-modal="join">Become a Member</button>
+          <button class="btn btn--outline js-modal" data-modal="video">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Watch the Film
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="container">
+        <ul class="stats" id="stats">
+          <li><span class="stats__num" data-count="10000" data-suffix="+">0</span><span class="stats__label">Global Members</span></li>
+          <li><span class="stats__num" data-count="40" data-suffix="+">0</span><span class="stats__label">Countries</span></li>
+          <li><span class="stats__num" data-count="250" data-suffix="+">0</span><span class="stats__label">Trusted Dealers</span></li>
+          <li><span class="stats__num" data-count="50" data-suffix="+">0</span><span class="stats__label">Exclusive Events</span></li>
+          <li class="stats__live"><span class="stats__num">24/7</span><span class="stats__label">Market Insights</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ COLLECTIONS ============ -->
+    <section class="section" id="collections">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Curated Categories</p>
+          <h2 class="section__title">Explore Our Collections</h2>
+          <p class="section__sub">Four worlds of provenance, craftsmanship, and quiet excellence — each authenticated by our network of trusted specialists.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal" id="watches">
+            <div class="card__media" data-art="watch"></div>
+            <div class="card__body">
+              <p class="card__kicker">Horology</p>
+              <h3 class="card__title">High-End Watches</h3>
+              <p class="card__text">Rolex, Patek Philippe, Audemars Piguet and independents — verified, valued, and traded with confidence.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore watches <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal" id="cars">
+            <div class="card__media" data-art="car"></div>
+            <div class="card__body">
+              <p class="card__kicker">Automobiles</p>
+              <h3 class="card__title">Classic Cars</h3>
+              <p class="card__text">From pre-war coachwork to modern hypercars, discover concours-grade machines and their stories.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore cars <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal" id="handbags">
+            <div class="card__media" data-art="bag"></div>
+            <div class="card__body">
+              <p class="card__kicker">Maison</p>
+              <h3 class="card__title">Luxury Handbags</h3>
+              <p class="card__text">Hermès Birkin, Kelly and rare exotics — collected, preserved, and appraised as fine assets.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore handbags <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal" id="art">
+            <div class="card__media" data-art="art"></div>
+            <div class="card__body">
+              <p class="card__kicker">Fine Art</p>
+              <h3 class="card__title">Fine Art</h3>
+              <p class="card__text">Modern masters and emerging names, with provenance research and private-sale access.</p>
+              <a class="link js-modal" data-modal="join" href="#">Explore art <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS ============ -->
+    <section class="section section--alt" id="benefits">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Why Join</p>
+          <h2 class="section__title">Where Exceptional Collections<br />Meet Exceptional People</h2>
+        </header>
+
+        <div class="benefits">
+          <div class="benefit reveal">
+            <div class="benefit__icon" data-icon="shield"></div>
+            <h3>Trust &amp; Authenticity</h3>
+            <p>Every member, dealer, and asset is vetted. Provenance and condition are independently verified.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="benefit__icon" data-icon="chart"></div>
+            <h3>Market Intelligence</h3>
+            <p>Real-time indices, auction analytics, and valuations so you collect with conviction.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="benefit__icon" data-icon="crown"></div>
+            <h3>Exclusive Community</h3>
+            <p>An invitation-only circle of serious collectors, curators, and specialists worldwide.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="benefit__icon" data-icon="ticket"></div>
+            <h3>Premium Events</h3>
+            <p>Private viewings, concours previews, and members-only auctions across the globe.</p>
+          </div>
+          <div class="benefit reveal">
+            <div class="benefit__icon" data-icon="bell"></div>
+            <h3>Concierge Service</h3>
+            <p>Sourcing, logistics, and white-glove acquisition handled by a dedicated advisor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARKET INSIGHTS ============ -->
+    <section class="section" id="market">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Live Data</p>
+          <h2 class="section__title">Market Insights</h2>
+          <p class="section__sub">Track the collectors&rsquo; market in real time. Indices update around the clock across every category.</p>
+        </header>
+
+        <div class="market">
+          <div class="market__chart reveal">
+            <div class="market__chart-head">
+              <div>
+                <p class="card__kicker">Crown &amp; Chrone Index</p>
+                <p class="market__value">2,481.6 <span class="up">&#9650; +5.4%</span></p>
+              </div>
+              <div class="market__range" role="tablist" aria-label="Chart range">
+                <button class="is-active" role="tab">1M</button>
+                <button role="tab">6M</button>
+                <button role="tab">1Y</button>
+                <button role="tab">5Y</button>
+              </div>
+            </div>
+            <svg class="chart" id="chart" viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(201,162,75,.35)" />
+                  <stop offset="100%" stop-color="rgba(201,162,75,0)" />
+                </linearGradient>
+              </defs>
+              <path id="chartArea" fill="url(#fill)" d=""></path>
+              <path id="chartLine" fill="none" stroke="#c9a24b" stroke-width="2.5" d=""></path>
+              <circle id="chartDot" r="4.5" fill="#e8c87a" cx="0" cy="0"></circle>
+            </svg>
+          </div>
+
+          <div class="market__list reveal">
+            <p class="card__kicker">Recent Auction Results</p>
+            <ul class="auctions">
+              <li>
+                <span class="auctions__name">Patek Philippe 5711 &ldquo;Tiffany&rdquo;</span>
+                <span class="auctions__meta">Watches</span>
+                <span class="auctions__price">$6.5M <em class="up">&#9650;</em></span>
+              </li>
+              <li>
+                <span class="auctions__name">Ferrari 250 GTO</span>
+                <span class="auctions__meta">Classic Cars</span>
+                <span class="auctions__price">$48.4M <em class="up">&#9650;</em></span>
+              </li>
+              <li>
+                <span class="auctions__name">Hermès Birkin Himalaya</span>
+                <span class="auctions__meta">Handbags</span>
+                <span class="auctions__price">$450K <em class="up">&#9650;</em></span>
+              </li>
+              <li>
+                <span class="auctions__name">Basquiat, Untitled</span>
+                <span class="auctions__meta">Fine Art</span>
+                <span class="auctions__price">$110M <em class="down">&#9660;</em></span>
+              </li>
+            </ul>
+            <button class="btn btn--ghost btn--block js-modal" data-modal="join">Unlock full market data</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="cta-band" id="about">
+      <div class="container cta-band__inner reveal">
+        <p class="eyebrow">By Invitation</p>
+        <h2 class="cta-band__title">Begin Your Collection&rsquo;s Next Chapter</h2>
+        <p class="cta-band__sub">Membership is curated. Apply today to join a global community where every piece has a provenance and every member has a passion.</p>
+        <button class="btn btn--gold btn--lg js-modal" data-modal="join">Become a Member</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="Crown and Chrone home">
+          <img src="assets/logo.svg" alt="" class="brand__mark" width="34" height="34" />
+          <span class="brand__text">
+            <span class="brand__name">CROWN &amp; CHRONE</span>
+            <span class="brand__tag">COLLECTORS&rsquo; CLUB</span>
+          </span>
+        </a>
+        <p class="footer__blurb">A private members&rsquo; club for collectors of exceptional things, since 2026.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a href="#" aria-label="Instagram"><span data-icon="instagram"></span></a>
+          <a href="#" aria-label="X"><span data-icon="x"></span></a>
+          <a href="#" aria-label="LinkedIn"><span data-icon="linkedin"></span></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Collections</h4>
+        <a href="#watches">Watches</a>
+        <a href="#cars">Classic Cars</a>
+        <a href="#handbags">Handbags</a>
+        <a href="#art">Fine Art</a>
+      </div>
+      <div class="footer__col">
+        <h4>Club</h4>
+        <a href="#benefits">Membership</a>
+        <a href="#market">Market Insights</a>
+        <a href="#about">Events</a>
+        <a href="#about">Concierge</a>
+      </div>
+      <div class="footer__col footer__news">
+        <h4>The Insider</h4>
+        <p>Market notes and curated lots, delivered weekly.</p>
+        <form class="news" id="newsForm">
+          <input type="email" required placeholder="Your email" aria-label="Email address" />
+          <button class="btn btn--gold btn--sm" type="submit">Subscribe</button>
+        </form>
+        <p class="news__msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="container footer__bar-inner">
+        <p>&copy; 2026 Crown &amp; Chrone. A design prototype.</p>
+        <nav class="footer__legal" aria-label="Legal">
+          <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile app-style bottom tab bar -->
+  <nav class="tabbar" aria-label="Mobile quick navigation">
+    <a href="#hero" class="is-active"><span data-icon="home"></span>Home</a>
+    <a href="#collections"><span data-icon="grid"></span>Explore</a>
+    <a href="#market"><span data-icon="chart"></span>Market</a>
+    <button class="js-modal" data-modal="join"><span data-icon="crown"></span>Join</button>
+  </nav>
+
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12z" fill="currentColor"/></svg>
+  </button>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__scrim js-modal-close"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close js-modal-close" aria-label="Close">&times;</button>
+      <div class="modal__body" id="modalBody"><!-- injected --></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
