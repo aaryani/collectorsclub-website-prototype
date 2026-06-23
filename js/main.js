@@ -15,6 +15,10 @@
     crown:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8l3 4 5-7 5 7 3-4 1 11H3L4 8z"/></svg>',
     ticket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8a2 2 0 012-2h12a2 2 0 012 2 2 2 0 000 4 2 2 0 010 4H6a2 2 0 01-2-2 2 2 0 000-4 2 2 0 010-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg>',
     bell:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 004 0"/></svg>',
+    members:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0111 0"/><path d="M16 5.5a3 3 0 010 5.6"/><path d="M17.5 19a5 5 0 00-3-4.6"/></svg>',
+    diamond:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M6 4h12l3 5-9 11L3 9z"/><path d="M3 9h18M9 4l-3 5 6 11 6-11-3-5"/></svg>',
+    gavel:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-3 3-6-6z"/><path d="M11.5 6.5l-7 7 3 3 7-7"/><path d="M5 21h9"/></svg>',
+    calendar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>',
     home:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg>',
     grid:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>',
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
@@ -177,7 +181,15 @@
       <p class="eyebrow">The Film</p>
       <h3>Inside Crown &amp; Chrone</h3>
       <div class="modal__video"><span class="modal__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></div>
-      <p>A 90-second look at the world of our collectors. Video playback is mocked in this prototype.</p>`
+      <p>A 90-second look at the world of our collectors. Video playback is mocked in this prototype.</p>`,
+    search: `
+      <p class="eyebrow">Explore</p>
+      <h3>Search the Collection</h3>
+      <p>Find watches, cars, handbags and market data across Crown &amp; Chrone. Search is mocked in this design prototype.</p>
+      <form class="modal__form js-fake">
+        <input type="search" placeholder="Try &ldquo;Patek Philippe&rdquo; or &ldquo;Ferrari 250&rdquo;" autofocus />
+        <button type="submit" class="btn btn--gold btn--block">Search</button>
+      </form>`
   };
   function openModal(key) {
     if (!MODALS[key]) return;

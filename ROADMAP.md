@@ -52,6 +52,11 @@ demo modal instead of hitting a server.
       and UI icons authored as crisp SVG
 - [x] Every photo bundled at three resolutions (480 / 960 / 1600px) and served
       responsively via `srcset`/`sizes` for mobile, tablet, and desktop/Retina
+- [x] Aligned closely to the reference screenshots: full nav (Home, Watches,
+      Classic Cars, Handbags, Art, Market Insights, Events, Directory, About) with
+      search + Log In / Join Now; gold-icon statistics bar; black classic car in the
+      hero with the gold watch fully shown; gold-watch / red-Ferrari / quilted-bag
+      category cards; and a minimal icon-left "trust bar" of membership benefits
 
 ### Responsive breakpoints
 | Device | Width | Layout |
